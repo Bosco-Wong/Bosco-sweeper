@@ -1,6 +1,3 @@
-//moved isValid function outside of the Button class
-//completed setMines function
-//completeed CountMines Fucntion
 
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
