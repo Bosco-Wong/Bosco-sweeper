@@ -34,7 +34,6 @@ public void setMines()
    int c = (int)(Math.random()*(NUM_COLS));
     if(isValid(r,c) && has(r,c) == false){
      mines.add(new MSButton(r,c));
-     System.out.println(r +"," +c);
      buttons[r][c].marked=true;
     }
   } 
