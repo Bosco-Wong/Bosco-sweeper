@@ -29,11 +29,12 @@ void setup ()
 }
 public void setMines()
 {
-  for(int x = 0; x < NUM_ROWS*2; x++){
+  for(int x = 0; x < 10; x++){
    int r = (int)(Math.random()*(NUM_ROWS));
    int c = (int)(Math.random()*(NUM_COLS));
     if(isValid(r,c) && has(r,c) == false){
      mines.add(new MSButton(r,c));
+     System.out.println(r +"," +c);
      buttons[r][c].marked=true;
     }
   } 
@@ -131,15 +132,18 @@ public class MSButton
        if(mouseButton == LEFT)
   for(int r= myRow-1; r<= myRow+1; r++)
   for(int c= myCol-1; c<= myCol+1; c++)
-  if(isValid(r,c) && has(r,c)==false && buttons[r][c].clicked==false)
-  if(has(r,c-1)==false)
+  if(isValid(r,c) && has(r,c)==false && buttons[r][c].clicked==false && countMines(r,c) ==0)
+  buttons[r][c].mousePressed(); 
+  /*if(has(r,c-1)==false)
   if(has(r,c+1)==false)
   if(has(r-1,c-1)==false)
   if(has(r+1,c+1)==false)
   if(has(r+1,c)==false)
   if(has(r-1,c)==false)
   if(has(r-1,c+1)==false)
-  buttons[r][c].mousePressed(); 
+  if(has(r+1,c-1)==false)*/
+   
+ 
     
     }
       
