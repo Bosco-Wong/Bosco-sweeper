@@ -134,14 +134,6 @@ public class MSButton
   for(int c= myCol-1; c<= myCol+1; c++)
   if(isValid(r,c) && has(r,c)==false && buttons[r][c].clicked==false && countMines(r,c) ==0)
   buttons[r][c].mousePressed(); 
-  /*if(has(r,c-1)==false)
-  if(has(r,c+1)==false)
-  if(has(r-1,c-1)==false)
-  if(has(r+1,c+1)==false)
-  if(has(r+1,c)==false)
-  if(has(r-1,c)==false)
-  if(has(r-1,c+1)==false)
-  if(has(r+1,c-1)==false)*/
    
  
     
