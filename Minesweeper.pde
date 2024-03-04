@@ -29,7 +29,7 @@ void setup ()
 }
 public void setMines()
 {
-  for(int x = 0; x < 10; x++){
+  for(int x = 0; x < NUM_ROWS; x++){
    int r = (int)(Math.random()*(NUM_ROWS));
    int c = (int)(Math.random()*(NUM_COLS));
     if(isValid(r,c) && has(r,c) == false){
@@ -127,14 +127,39 @@ public class MSButton
       
       if(countMines(myRow,myCol)>0)
        this.setLabel(countMines(myRow,myCol));
-  
-       if(mouseButton == LEFT)
-  for(int r= myRow-1; r<= myRow+1; r++)
-  for(int c= myCol-1; c<= myCol+1; c++)
-  if(isValid(r,c) && has(r,c)==false && buttons[r][c].clicked==false && countMines(r,c) ==0)
-  buttons[r][c].mousePressed(); 
-   
- 
+  if(countMines(myRow,myCol)==0){
+if(isValid(myRow-1,myCol) && buttons[myRow-1][myCol].clicked == false && has(myRow-1,myCol) == false)
+buttons[myRow-1][myCol].mousePressed();
+//top mid
+
+if(isValid(myRow+1,myCol) && buttons[myRow+1][myCol].clicked == false && has(myRow+1,myCol) == false)
+buttons[myRow+1][myCol].mousePressed();
+//bottom mid
+
+if(isValid(myRow,myCol+1) && buttons[myRow][myCol+1].clicked == false && has(myRow,myCol+1) == false)
+buttons[myRow][myCol+1].mousePressed();
+//middle right
+
+if(isValid(myRow-1,myCol+1) && buttons[myRow-1][myCol+1].clicked == false && has(myRow-1,myCol+1) == false)
+buttons[myRow-1][myCol+1].mousePressed();
+//top right
+
+if(isValid(myRow-1,myCol-1) && buttons[myRow-1][myCol-1].clicked == false && has(myRow-1,myCol-1) == false)
+buttons[myRow-1][myCol-1].mousePressed();
+//top left
+
+if(isValid(myRow+1,myCol+1) && buttons[myRow+1][myCol+1].clicked == false && has(myRow+1,myCol+1) == false)
+buttons[myRow+1][myCol+1].mousePressed();
+//bottom right
+
+if(isValid(myRow,myCol-1) && buttons[myRow][myCol-1].clicked == false && has(myRow,myCol-1) == false)
+buttons[myRow][myCol-1].mousePressed();
+//middle left
+
+if(isValid(myRow+1,myCol-1) && buttons[myRow+1][myCol-1].clicked == false && has(myRow+1,myCol-1) == false)
+buttons[myRow+1][myCol-1].mousePressed();
+//bottom left
+  }
     
     }
       
